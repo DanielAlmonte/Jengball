@@ -5,8 +5,13 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-/*    public float RotationSpeed = -1000;
-*/
+    /*    public float RotationSpeed = -1000;
+    */
+
+
+    GameObject cachedObject;
+    GameObject selecteObject;
+
     Material m_Material;
     Color ogColor;
 
@@ -23,35 +28,44 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         CameraRotation();
-        CheckSelected();
+        SelectPiece();
     }
 
+   
     void CameraRotation()
     {
+
+        // Rotate the camera when right mouse button is pressed.
         if (Input.GetKey(KeyCode.Mouse1))
         {
             transform.parent.Rotate(0.0f, Input.GetAxis("Mouse X") * 1000 * Time.deltaTime, 0.0f, Space.World);
             m_Material.color = new Color(0,1,0);
 
         }
+
+        // Change material colour to a little bit darker green.
         if (Input.GetKeyUp(KeyCode.Mouse1)) 
         {
             m_Material.color = ogColor;
         }
     }
     
-    void CheckSelected()
+    void SelectPiece()
     {
+        // Return if left mouse button is not pressed.
         if (!Input.GetKeyDown(KeyCode.Mouse0)) return;
 
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit))
         {
-            if (hit.collider.gameObject.CompareTag("Piece"))
+            // Check if the raycast hits piece.
+            if (hit.collider.tag == "Piece")
             {
                 Debug.Log("this piece");
-
                 hit.collider.gameObject.GetComponent<Piece>().selected = true;
+
+
             }
         }
     }
 }
+    
