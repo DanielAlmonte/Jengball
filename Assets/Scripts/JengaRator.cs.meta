@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 1841eee612f9a4443a0d1c12ced502ae
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - JengaPiece: {fileID: 6619949192105527029, guid: a54f33ea755d3e842bb0ce211809e93e,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
