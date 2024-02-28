@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
 
 
     GameObject cachedObject;
-    GameObject selecteObject;
+  
 
     Material m_Material;
     Color ogColor;
@@ -52,20 +52,30 @@ public class CameraController : MonoBehaviour
     
     void SelectPiece()
     {
-        // Return if left mouse button is not pressed.
-        if (!Input.GetKeyDown(KeyCode.Mouse0)) return;
+    // Return if left mouse button is not pressed.
+    if (!Input.GetKeyDown(KeyCode.Mouse0)) return;
 
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit))
+             
+    if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit))
+    {
+        // Check if the raycast hits piece.
+        if (hit.collider.tag == "Piece" )
         {
-            // Check if the raycast hits piece.
-            if (hit.collider.tag == "Piece")
-            {
-                Debug.Log("this piece");
-                hit.collider.gameObject.GetComponent<Piece>().selected = true;
-
-
-            }
+            hit.collider.gameObject.GetComponent<Piece>().selected = true;
         }
-    }
+        if (Input.GetKey(KeyCode.T))
+        {
+            hit.collider.gameObject.GetComponent<Piece>().selected = false;
+        }
+
+
+
+        }
+        else if (hit.collider.tag == "RotatedPiece" )
+        {
+            /*Debug.Log("this piece");*/
+            hit.collider.gameObject.GetComponent<Piece>().rotatedselected = true;
+        }
+    }      
 }
     
