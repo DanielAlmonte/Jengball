@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,8 +20,8 @@ public class JengaRator : MonoBehaviour
         RemoveTest();
     }
 
-    List<GameObject> JengaPiecesArr = new List<GameObject>();
-    List<GameObject> JengaRotatedPiecesArr = new List<GameObject>();
+    public List<GameObject> JengaPiecesArr = new List<GameObject>();
+    public List<GameObject> JengaRotatedPiecesArr = new List<GameObject>();
     void GenerateJengaTower()
     {
         // Instantiate(JengaTower, new Vector3(0,0,0), Quaternion.identity);
@@ -106,3 +106,4 @@ public class JengaRator : MonoBehaviour
         // }
     }
 }
+*/

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Piece : MonoBehaviour
 {
     public bool selected = false;
-    public bool rotatedselected = false;
+
 
     Material pieceMaterial;
     [SerializeField] Material bloomMaterial;
@@ -27,7 +27,7 @@ public class Piece : MonoBehaviour
 
     void MovePiece()
     {
-        if (rotatedselected)
+        if (selected)
         {
             // Change the material to a material that has emission
             pieceMaterial = bloomMaterial;
@@ -35,42 +35,23 @@ public class Piece : MonoBehaviour
 
             if (Input.GetKey(KeyCode.W))
             {
-                gameObject.transform.position += new Vector3(5, 0, 0) * Time.deltaTime;
+                gameObject.transform.localPosition += transform.TransformDirection(new Vector3(0, 0, 5) * Time.deltaTime);
 
             }
 
             if (Input.GetKey(KeyCode.S))
             {
-                gameObject.transform.position += new Vector3(-5, 0, 0) * Time.deltaTime;
+                gameObject.transform.localPosition += transform.TransformDirection(new Vector3(0, 0, -5) * Time.deltaTime);
 
             }
         }
-
-        else if (selected)
+        
+        if (!selected)
         {
-            // Change the material to a material that has emission
-            pieceMaterial = bloomMaterial;
-            GetComponent<MeshRenderer>().material = bloomMaterial;
+            // Change the material with a material without emission.
+            pieceMaterial = noBloomMaterial;
+            GetComponent<MeshRenderer>().material = noBloomMaterial;
 
-            if (Input.GetKey(KeyCode.W))
-            {
-                gameObject.transform.position += new Vector3(0, 0, 5) * Time.deltaTime;
-
-            }
-
-            if (Input.GetKey(KeyCode.S))
-            {
-                gameObject.transform.position += new Vector3(0, 0, -5) * Time.deltaTime;
-
-            }
         }
-
-        /*     if (!selected)
-             {
-                 // Change the material with a material without emission.
-                 pieceMaterial = noBloomMaterial;
-                 GetComponent<MeshRenderer>().material = noBloomMaterial;
-
-             }*/
     }
 }

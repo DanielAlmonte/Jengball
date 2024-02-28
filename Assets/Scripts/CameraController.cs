@@ -1,29 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    /*    public float RotationSpeed = -1000;
-    */
-
-
-    GameObject cachedObject;
-  
-
+    private float rotationSpeed = 1000;
     Material m_Material;
+
+
+    // Original colour of the platform.
     Color ogColor;
 
     [SerializeField] GameObject platform;
-    
+
     // Start is called before the first frame update
     void Start()
     {
         m_Material = platform.GetComponent<Renderer>().material;
         ogColor = m_Material.color;
     }
-    
+
     // Update is called once per frame
     void Update()
     {
@@ -31,51 +29,61 @@ public class CameraController : MonoBehaviour
         SelectPiece();
     }
 
-   
+
     void CameraRotation()
     {
 
         // Rotate the camera when right mouse button is pressed.
         if (Input.GetKey(KeyCode.Mouse1))
         {
-            transform.parent.Rotate(0.0f, Input.GetAxis("Mouse X") * 1000 * Time.deltaTime, 0.0f, Space.World);
-            m_Material.color = new Color(0,1,0);
+            transform.parent.Rotate(0.0f, Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime, 0.0f, Space.World);
+            m_Material.color = new Color(0, 1, 0);
 
         }
 
         // Change material colour to a little bit darker green.
-        if (Input.GetKeyUp(KeyCode.Mouse1)) 
+        if (Input.GetKeyUp(KeyCode.Mouse1))
         {
             m_Material.color = ogColor;
         }
     }
-    
+
     void SelectPiece()
     {
-    // Return if left mouse button is not pressed.
-    if (!Input.GetKeyDown(KeyCode.Mouse0)) return;
+        // Return if left or right mouse button is not pressed.
+        if (!Input.GetKeyDown(KeyCode.Mouse0)) return;
+        Debug.Log("test");
 
-             
-    if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit))
-    {
-        // Check if the raycast hits piece.
-        if (hit.collider.tag == "Piece" )
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit))
         {
-            hit.collider.gameObject.GetComponent<Piece>().selected = true;
-        }
-        if (Input.GetKey(KeyCode.T))
-        {
-            hit.collider.gameObject.GetComponent<Piece>().selected = false;
-        }
 
+            List<GameObject> pieces = new List<GameObject>();
+            pieces.AddRange(GameObject.FindGameObjectsWithTag("Piece"));
 
+/*            for (int i = 0; i < 2; i++)
+            {
+                Debug.Log(pieces[i].GetComponent<Piece>().selected);
+            }*/
 
+            // Check if the raycast hits piece.
+            if (hit.collider.tag == "Piece")
+            {
+                for (int i = 0; i < 2; i++)
+                {
+                    pieces[i].GetComponent<Piece>().selected = false;
+                }
+                hit.collider.gameObject.GetComponent<Piece>().selected = true;
+                if (hit.collider.gameObject.GetComponent<Piece>().selected == true)
+                {
+
+                    Debug.Log("deselect piece!");
+                    return;
+                }
+
+                hit.collider.gameObject.GetComponent<Piece>().selected = true;
+                Debug.Log("select piece!");
+
+            }
         }
-        else if (hit.collider.tag == "RotatedPiece" )
-        {
-            /*Debug.Log("this piece");*/
-            hit.collider.gameObject.GetComponent<Piece>().rotatedselected = true;
-        }
-    }      
-}
-    
+    }
+}   
