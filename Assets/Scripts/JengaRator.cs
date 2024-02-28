@@ -51,13 +51,13 @@ public class JengaRator : MonoBehaviour
             }
         }
         
-        // for (var t = 0; t < 27; t++)
-        // {   JengaPiecesArr[t].name = ("JengaPiece" + " " + JP++);
-        //     Debug.Log(JengaPiecesArr[t]);
+        for (var t = 0; t < 27; t++)
+        {   JengaPiecesArr[t].name = ("JengaPiece" + " " + JP++);
+            // Debug.Log(JengaPiecesArr[t]);
 
-        //     JengaRotatedPiecesArr[t].name = ("JengaRotatedPiece" + " " + JP++);
-        //     Debug.Log(JengaRotatedPiecesArr[t]);
-        // }
+            JengaRotatedPiecesArr[t].name = ("JengaRotatedPiece" + " " + JP++);
+            // Debug.Log(JengaRotatedPiecesArr[t]);
+        }
 
 
 
