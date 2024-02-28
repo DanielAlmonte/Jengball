@@ -49,12 +49,4 @@ public class JengaRator : MonoBehaviour
             // Debug.Log(JengaRotatedPiecesArr[t]);
         }
     }
-
-    void RemoveTest()
-    {
-        if (Input.GetKey(KeyCode.R))
-        {
-            Destroy(JengaPiecesArr[3]);
-        }
-    }
 }
