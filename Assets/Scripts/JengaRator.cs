@@ -1,4 +1,4 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,7 +28,6 @@ public class JengaRator : MonoBehaviour
 
         int JP = 1;
 
-
         for (var h = 0; h < (JengaTowerHeight/2); h++)
         {
             for (var w = 0; w < JengaTowerWidth; w++)
@@ -50,4 +49,3 @@ public class JengaRator : MonoBehaviour
         }
     }
 }
-*/

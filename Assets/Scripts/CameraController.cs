@@ -9,7 +9,6 @@ public class CameraController : MonoBehaviour
     private float rotationSpeed = 1000;
     Material m_Material;
 
-
     // Original colour of the platform.
     Color ogColor;
 
@@ -32,13 +31,11 @@ public class CameraController : MonoBehaviour
 
     void CameraRotation()
     {
-
         // Rotate the camera when right mouse button is pressed.
         if (Input.GetKey(KeyCode.Mouse1))
         {
             transform.parent.Rotate(0.0f, Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime, 0.0f, Space.World);
             m_Material.color = new Color(0, 1, 0);
-
         }
 
         // Change material colour to a little bit darker green.
@@ -56,14 +53,8 @@ public class CameraController : MonoBehaviour
 
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit))
         {
-
             List<GameObject> pieces = new List<GameObject>();
             pieces.AddRange(GameObject.FindGameObjectsWithTag("Piece"));
-
-/*            for (int i = 0; i < 2; i++)
-            {
-                Debug.Log(pieces[i].GetComponent<Piece>().selected);
-            }*/
 
             // Check if the raycast hits piece.
             if (hit.collider.tag == "Piece")
@@ -72,17 +63,17 @@ public class CameraController : MonoBehaviour
                 {
                     pieces[i].GetComponent<Piece>().selected = false;
                 }
+
                 hit.collider.gameObject.GetComponent<Piece>().selected = true;
+
                 if (hit.collider.gameObject.GetComponent<Piece>().selected == true)
                 {
-
                     Debug.Log("deselect piece!");
                     return;
                 }
 
                 hit.collider.gameObject.GetComponent<Piece>().selected = true;
                 Debug.Log("select piece!");
-
             }
         }
     }

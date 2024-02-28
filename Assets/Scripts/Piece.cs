@@ -6,7 +6,6 @@ public class Piece : MonoBehaviour
 {
     public bool selected = false;
 
-
     Material pieceMaterial;
     [SerializeField] Material bloomMaterial;
     [SerializeField] Material noBloomMaterial;
@@ -36,13 +35,11 @@ public class Piece : MonoBehaviour
             if (Input.GetKey(KeyCode.W))
             {
                 gameObject.transform.localPosition += transform.TransformDirection(new Vector3(0, 0, 5) * Time.deltaTime);
-
             }
 
             if (Input.GetKey(KeyCode.S))
             {
                 gameObject.transform.localPosition += transform.TransformDirection(new Vector3(0, 0, -5) * Time.deltaTime);
-
             }
         }
         
@@ -61,6 +58,7 @@ public class Piece : MonoBehaviour
         {
             Destroy(this.gameObject, 0.5f);
         }
+        
         else {
             return;
         }
