@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3547636176733904011}
   - component: {fileID: 7319993539066899265}
   - component: {fileID: -304986170048864534}
+  - component: {fileID: 1235814060087568105}
   m_Layer: 0
   m_Name: TestRotatedPiece
   m_TagString: Piece
@@ -120,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
+  rotatedselected: 0
   bloomMaterial: {fileID: 0}
   noBloomMaterial: {fileID: 0}
 --- !u!54 &-304986170048864534
@@ -149,3 +151,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1235814060087568105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950496561810637254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3077833516b0f834497180796a2fbe8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selected: 0
+  rotatedselected: 0
+  bloomMaterial: {fileID: 0}
+  noBloomMaterial: {fileID: 0}

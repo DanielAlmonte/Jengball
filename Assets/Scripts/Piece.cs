@@ -54,4 +54,15 @@ public class Piece : MonoBehaviour
 
         }
     }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Ground")
+        {
+            Destroy(this.gameObject, 0.5f);
+        }
+        else {
+            return;
+        }
+    }
 }
