@@ -5,6 +5,7 @@ using UnityEngine;
 public class Piece : MonoBehaviour
 {
     public bool selected = false;
+    public bool rotatedselected = false;
 
     Material pieceMaterial;
     [SerializeField] Material bloomMaterial;
@@ -26,7 +27,7 @@ public class Piece : MonoBehaviour
 
     void MovePiece()
     {
-        if (selected)
+        if (rotatedselected)
         {
             // Change the material to a material that has emission
             pieceMaterial = bloomMaterial;
@@ -44,12 +45,32 @@ public class Piece : MonoBehaviour
 
             }
         }
-   /*     if (!selected)
-        {
-            // Change the material with a material without emission.
-            pieceMaterial = noBloomMaterial;
-            GetComponent<MeshRenderer>().material = noBloomMaterial;
 
-        }*/
+        else if (selected)
+        {
+            // Change the material to a material that has emission
+            pieceMaterial = bloomMaterial;
+            GetComponent<MeshRenderer>().material = bloomMaterial;
+
+            if (Input.GetKey(KeyCode.W))
+            {
+                gameObject.transform.position += new Vector3(0, 0, 5) * Time.deltaTime;
+
+            }
+
+            if (Input.GetKey(KeyCode.S))
+            {
+                gameObject.transform.position += new Vector3(0, 0, -5) * Time.deltaTime;
+
+            }
+        }
+
+        /*     if (!selected)
+             {
+                 // Change the material with a material without emission.
+                 pieceMaterial = noBloomMaterial;
+                 GetComponent<MeshRenderer>().material = noBloomMaterial;
+
+             }*/
     }
 }

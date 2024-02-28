@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 721375084774238696}
+  - component: {fileID: 8718755697015007212}
   m_Layer: 0
   m_Name: JengaTowerTest
   m_TagString: Untagged
@@ -85,6 +86,21 @@ Transform:
   - {fileID: 4493775714749777161}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8718755697015007212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2517610399887381471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3077833516b0f834497180796a2fbe8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selected: 0
+  bloomMaterial: {fileID: 2100000, guid: 76111670c25eb754682d42b3bcaad807, type: 2}
+  noBloomMaterial: {fileID: 2100000, guid: 903d649082f6d5e44b52235f7621b463, type: 2}
 --- !u!1001 &597142856771678204
 PrefabInstance:
   m_ObjectHideFlags: 0

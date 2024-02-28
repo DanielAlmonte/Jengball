@@ -26,7 +26,7 @@ public class JengaRator : MonoBehaviour
     {
         // Instantiate(JengaTower, new Vector3(0,0,0), Quaternion.identity);
 
-        // int JP = 1;
+        int JP = 1;
 
 
         for (var h = 0; h < (JengaTowerHeight/2); h++)

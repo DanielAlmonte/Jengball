@@ -470,7 +470,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
-  bloomPieceMaterial: {fileID: 2100000, guid: 76111670c25eb754682d42b3bcaad807, type: 2}
+  bloomMaterial: {fileID: 0}
+  noBloomMaterial: {fileID: 0}
 --- !u!1 &1453048428
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,5 +735,5 @@ SceneRoots:
   - {fileID: 2125791460}
   - {fileID: 2051008335}
   - {fileID: 1453048429}
-  - {fileID: 1153314482}
   - {fileID: 238867970}
+  - {fileID: 1153314482}
