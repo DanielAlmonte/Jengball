@@ -9,6 +9,10 @@ public class CameraController : MonoBehaviour
     private float rotationSpeed = 1000;
     Material m_Material;
 
+
+    // moving camera up and down with scroll wheel test.
+    private float sensitivity = 100;
+
     // Original colour of the platform.
     Color ogColor;
 
@@ -26,6 +30,7 @@ public class CameraController : MonoBehaviour
     {
         CameraRotation();
         SelectPiece();
+        CameraMovement();
     }
 
 
@@ -42,6 +47,15 @@ public class CameraController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Mouse1))
         {
             m_Material.color = ogColor;
+        }
+    }
+
+    void CameraMovement()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        { 
+            transform.position += new Vector3(0f, Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime, 0f);
+        
         }
     }
 
