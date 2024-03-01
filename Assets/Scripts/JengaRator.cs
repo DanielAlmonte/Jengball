@@ -17,43 +17,45 @@ public class JengaRator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        RegenerateJengaTower();
     }
 
-    public List<GameObject> JengaPiecesArr = new List<GameObject>();
+    public List<GameObject> JengaPiecesList = new List<GameObject>();
     public List<GameObject> JengaRotatedPiecesArr = new List<GameObject>();
     void GenerateJengaTower()
     {
-        // Instantiate(JengaTower, new Vector3(0,0,0), Quaternion.identity);
-
         int JP = 1;
 
         for (var h = 0; h < (JengaTowerHeight/2); h++)
         {
             for (var w = 0; w < JengaTowerWidth; w++)
             {
-                // JengaPiecesArr.Add(Instantiate(JengaPiece, new Vector3((w + (JengaTowerWidth/2f)), h*2, 1), Quaternion.identity) as GameObject);
-                // // JengaPiecesArr[w].GetComponent<Renderer>().material = Materials[Random.Range(0, Materials.Length)];
+                JengaPiecesList.Add(Instantiate(JengaPiece, new Vector3(1, (h * 2), w), Quaternion.identity) as GameObject);
+                // JengaPiecesList[w].GetComponent<Renderer>().material = Materials[Random.Range(0, Materials.Length)];
 
-                // JengaRotatedPiecesArr.Add(Instantiate(JengaRotatedPiece, new Vector3(2.5f, (h*2 + 1 ), (w * 1)), Quaternion.identity) as GameObject);
-                // // JengaRotatedPiecesArr[w].GetComponent<Renderer>().material = Materials[Random.Range(0, Materials.Length)];
-
-                JengaPiecesArr.Add(Instantiate(JengaPiece, new Vector3(1, h*2, w), Quaternion.identity) as GameObject);
-                // JengaPiecesArr[w].GetComponent<Renderer>().material = Materials[Random.Range(0, Materials.Length)];
-
-                JengaRotatedPiecesArr.Add(Instantiate(JengaRotatedPiece, new Vector3(w, ((h * 2) + 1), 1), Quaternion.identity * Quaternion.Euler (0, 90, 0)) as GameObject);
+                JengaPiecesList.Add(Instantiate(JengaRotatedPiece, new Vector3(w, ((h * 2) + 1), 1), Quaternion.identity * Quaternion.Euler (0, 90, 0)) as GameObject);
                 // JengaRotatedPiecesArr[w].GetComponent<Renderer>().material = Materials[Random.Range(0, Materials.Length)];
             }
         }
         
-        for (var t = 0; t < 27; t++)
-        {   JengaPiecesArr[t].name = ("JengaPiece" + " " + JP++);
-            // Debug.Log(JengaPiecesArr[t]);
-            // JengaPiecesArr[t].AddComponent<Rigidbody>();
+        for (var t = 0; t < JengaPiecesList.Count; t++)
+        {   
+            JengaPiecesList[t].name = ("JengaPiece" + " " + JP++);
+        }
+    }
 
-            JengaRotatedPiecesArr[t].name = ("JengaRotatedPiece" + " " + JP++);
-            // Debug.Log(JengaRotatedPiecesArr[t]);
-            // JengaRotatedPiecesArr[t].AddComponent<Rigidbody>();
+    void RegenerateJengaTower()
+    {
+        if (Input.GetKey(KeyCode.R))
+        {    
+            for (var t = 0; t < JengaPiecesList.Count; t++)
+            {   
+                Destroy(JengaPiecesList[t]);
+            }
+
+            JengaPiecesList.Clear(); 
+
+            GenerateJengaTower();
         }
     }
 }
