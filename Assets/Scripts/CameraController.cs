@@ -11,7 +11,7 @@ public class CameraController : MonoBehaviour
 
 
     // moving camera up and down with scroll wheel test.
-    private float sensitivity = 100;
+    private float MovementSensitivity = 100;
 
     // Original colour of the platform.
     Color ogColor;
@@ -54,7 +54,7 @@ public class CameraController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         { 
-            transform.position += new Vector3(0f, Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime, 0f);
+            transform.position += new Vector3(0f, Input.GetAxis("Mouse Y") * MovementSensitivity * Time.deltaTime, 0f);
         
         }
     }
@@ -73,7 +73,7 @@ public class CameraController : MonoBehaviour
             // Check if the raycast hits piece.
             if (hit.collider.tag == "Piece")
             {
-                for (int i = 0; i < 2; i++)
+                for (int i = 0; i < pieces.Count; i++)
                 {
                     pieces[i].GetComponent<Piece>().selected = false;
                 }

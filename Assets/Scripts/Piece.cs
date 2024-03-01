@@ -34,12 +34,12 @@ public class Piece : MonoBehaviour
 
             if (Input.GetKey(KeyCode.W))
             {
-                gameObject.transform.localPosition += transform.TransformDirection(new Vector3(0, 0, 5) * Time.deltaTime);
+                gameObject.transform.localPosition += transform.TransformDirection(new Vector3(5, 0, 0) * Time.deltaTime);
             }
 
             if (Input.GetKey(KeyCode.S))
             {
-                gameObject.transform.localPosition += transform.TransformDirection(new Vector3(0, 0, -5) * Time.deltaTime);
+                gameObject.transform.localPosition += transform.TransformDirection(new Vector3(-5, 0, 0) * Time.deltaTime);
             }
         }
         
