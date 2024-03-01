@@ -46,7 +46,10 @@ public class JengaRator : MonoBehaviour
 
     void RegenerateJengaTower()
     {
-        if (Input.GetKey(KeyCode.R))
+        List<GameObject> JengaPiecesLeft = new List<GameObject>();
+        JengaPiecesLeft.AddRange(GameObject.FindGameObjectsWithTag("Piece"));
+
+        if (JengaPiecesLeft.Count < JengaPiecesList.Count || Input.GetKey(KeyCode.R))
         {    
             for (var t = 0; t < JengaPiecesList.Count; t++)
             {   
@@ -56,6 +59,11 @@ public class JengaRator : MonoBehaviour
             JengaPiecesList.Clear(); 
 
             GenerateJengaTower();
+        }
+
+        else 
+        {
+            return;
         }
     }
 }
