@@ -11,7 +11,7 @@ public class CameraController : MonoBehaviour
 
 
     // moving camera up and down with scroll wheel test.
-    private float MovementSensitivity = 100;
+    private float sensitivity = 10000f;
 
     // Original colour of the platform.
     Color ogColor;
@@ -28,9 +28,9 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CameraRotation();
+        /*CameraRotation();*/
         SelectPiece();
-        CameraMovement();
+        /*CameraMovement();*/
     }
 
 
@@ -52,10 +52,11 @@ public class CameraController : MonoBehaviour
 
     void CameraMovement()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        { 
-            transform.position += new Vector3(0f, Input.GetAxis("Mouse Y") * MovementSensitivity * Time.deltaTime, 0f);
-        
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            /*transform.parent.position += new Vector3(0f, Input.GetAxis("Mouse ScrollWheel") * sensitivity * Time.deltaTime, 0f);*/
+            transform.parent.Rotate(0.0f, 0.0f, Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime, Space.World);
+
         }
     }
 
