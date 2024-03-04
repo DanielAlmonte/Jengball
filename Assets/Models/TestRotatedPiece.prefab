@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
+  pieceInside: 1
   bloomMaterial: {fileID: 2100000, guid: 76111670c25eb754682d42b3bcaad807, type: 2}
   noBloomMaterial: {fileID: 2100000, guid: 1e8b3d22326c215488cde6936a8ced63, type: 2}
 --- !u!54 &1595944506242706676

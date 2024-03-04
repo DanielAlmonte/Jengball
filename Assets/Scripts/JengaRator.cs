@@ -33,10 +33,10 @@ public class JengaRator : MonoBehaviour
         {
             for (var w = 0; w < JengaTowerWidth; w++)
             {
-                JengaPiecesList.Add(Instantiate(JengaPiece, new Vector3(1, (h * 2), w), Quaternion.identity) as GameObject);
+                JengaPiecesList.Add(Instantiate(JengaPiece, new Vector3(1, (h), w), Quaternion.identity) as GameObject);
                 // JengaPiecesList[w].GetComponent<Renderer>().material = Materials[Random.Range(0, Materials.Length)];
 
-                JengaPiecesList.Add(Instantiate(JengaRotatedPiece, new Vector3(w, ((h * 2) + 1), 1), Quaternion.identity * Quaternion.Euler (0, 90, 0)) as GameObject);
+                JengaPiecesList.Add(Instantiate(JengaRotatedPiece, new Vector3(w, ((h) + 0.5f), 1), Quaternion.identity * Quaternion.Euler (0, 90, 0)) as GameObject);
                 // JengaRotatedPiecesArr[w].GetComponent<Renderer>().material = Materials[Random.Range(0, Materials.Length)];
             }
         }
@@ -59,7 +59,7 @@ public class JengaRator : MonoBehaviour
                 Destroy(JengaPiecesList[t]);
             }
 
-            JengaPiecesList.Clear(); 
+            JengaPiecesList.Clear();  
 
             GenerateJengaTower();
         }
@@ -73,13 +73,9 @@ public class JengaRator : MonoBehaviour
     {
         // Return if left or right mouse button is not pressed.
         if (!Input.GetKeyDown(KeyCode.Mouse0)) return;
-        Debug.Log("test");
 
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit))
         {
-            List<GameObject> pieces = new List<GameObject>();
-            pieces.AddRange(GameObject.FindGameObjectsWithTag("Piece"));
-
             // Check if the raycast hits piece.
             if (hit.collider.tag == "Piece")
             {
@@ -87,6 +83,8 @@ public class JengaRator : MonoBehaviour
                 {
                     //deselectPiece doe iets
                     selectedPiece.selected = false;
+
+                    Debug.Log("selected a piece");
                 }
 
                 selectedPiece = hit.collider.gameObject.GetComponent<Piece>();
