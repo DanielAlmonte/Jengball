@@ -8,6 +8,8 @@ public class JengaRator : MonoBehaviour
     public int JengaTowerWidth = 3, JengaTowerHeight = 18;
     public Material[] Materials;
 
+    Piece selectedPiece = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,7 @@ public class JengaRator : MonoBehaviour
     void Update()
     {
         RegenerateJengaTower();
+        SelectPiece();
     }
 
     public List<GameObject> JengaPiecesList = new List<GameObject>();
@@ -56,7 +59,7 @@ public class JengaRator : MonoBehaviour
                 Destroy(JengaPiecesList[t]);
             }
 
-            JengaPiecesList.Clear(); 
+            JengaPiecesList.Clear();  
 
             GenerateJengaTower();
         }
@@ -64,6 +67,29 @@ public class JengaRator : MonoBehaviour
         else 
         {
             return;
+        }
+    }
+    void SelectPiece()
+    {
+        // Return if left or right mouse button is not pressed.
+        if (!Input.GetKeyDown(KeyCode.Mouse0)) return;
+
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit))
+        {
+            // Check if the raycast hits piece.
+            if (hit.collider.tag == "Piece")
+            {
+                if (selectedPiece != null)
+                {
+                    //deselectPiece doe iets
+                    selectedPiece.selected = false;
+
+                    Debug.Log("selected a piece");
+                }
+
+                selectedPiece = hit.collider.gameObject.GetComponent<Piece>();
+                selectedPiece.selected = true;
+            }
         }
     }
 }
