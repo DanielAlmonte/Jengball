@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -714,7 +714,7 @@ MonoBehaviour:
   JengaRotatedPiece: {fileID: 950496561810637254, guid: 73d78ae0d6ea7184d8574c31d9804602,
     type: 3}
   JengaTowerWidth: 3
-  JengaTowerHeight: 18
+  JengaTowerHeight: 9
   Materials: []
   JengaPiecesList: []
   JengaRotatedPiecesArr: []

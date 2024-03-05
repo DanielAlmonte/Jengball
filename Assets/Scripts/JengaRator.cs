@@ -30,10 +30,10 @@ public class JengaRator : MonoBehaviour
         {
             for (var w = 0; w < JengaTowerWidth; w++)
             {
-                JengaPiecesList.Add(Instantiate(JengaPiece, new Vector3(1, (h * 2), w), Quaternion.identity) as GameObject);
+                JengaPiecesList.Add(Instantiate(JengaPiece, new Vector3(1, (h), w), Quaternion.identity) as GameObject);
                 // JengaPiecesList[w].GetComponent<Renderer>().material = Materials[Random.Range(0, Materials.Length)];
 
-                JengaPiecesList.Add(Instantiate(JengaRotatedPiece, new Vector3(w, ((h * 2) + 1), 1), Quaternion.identity * Quaternion.Euler (0, 90, 0)) as GameObject);
+                JengaPiecesList.Add(Instantiate(JengaRotatedPiece, new Vector3(w, ((h) + 0.5f), 1), Quaternion.identity * Quaternion.Euler (0, 90, 0)) as GameObject);
                 // JengaRotatedPiecesArr[w].GetComponent<Renderer>().material = Materials[Random.Range(0, Materials.Length)];
             }
         }
