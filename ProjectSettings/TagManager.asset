@@ -8,6 +8,8 @@ TagManager:
   - Piece
   - Ground
   - JengaCollider
+  - Barrier
+  - Remove
   layers:
   - Default
   - TransparentFX

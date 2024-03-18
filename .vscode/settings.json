@@ -51,5 +51,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Jengball.sln"
+    "dotnet.defaultSolution": "Jengball.sln",
+    "dotnet.preferCSharpExtension": true
 }
