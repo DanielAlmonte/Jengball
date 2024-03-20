@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 
-public class ToggleMainMenu : MonoBehaviour
+public class MainMenuController : MonoBehaviour
 {
     private VideoPlayer videoPlayer;
     public GameObject introPlayer;
-    public GameObject menu;
     public Vector3 targetPosition;
     public float speed = 10;
     bool moveUp = false;
@@ -24,8 +23,7 @@ public class ToggleMainMenu : MonoBehaviour
         Intro();
         if (moveUp == true)
         {
-            // menu.transform.Translate(Vector3.up * speed * Time.deltaTime);
-             menu.transform.position = Vector3.MoveTowards(menu.transform.position, targetPosition, speed * Time.deltaTime);
+             this.transform.position = Vector3.MoveTowards(this.transform.position, targetPosition, speed * Time.deltaTime);
         }
     }
 
