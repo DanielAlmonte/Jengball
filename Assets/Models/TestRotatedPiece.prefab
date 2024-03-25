@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3547636176733904011}
   - component: {fileID: 1235814060087568105}
   - component: {fileID: 1595944506242706676}
+  - component: {fileID: 2991391246817818131}
   m_Layer: 0
   m_Name: TestRotatedPiece
   m_TagString: Piece
@@ -93,7 +94,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950496561810637254}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f5e3dbb9300a60b4fa23d604f1bc2f24, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -120,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
-  pieceInside: 1
+  collisionCount: 0
   bloomMaterial: {fileID: 2100000, guid: 76111670c25eb754682d42b3bcaad807, type: 2}
   noBloomMaterial: {fileID: 2100000, guid: 1e8b3d22326c215488cde6936a8ced63, type: 2}
 --- !u!54 &1595944506242706676
@@ -150,3 +151,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &2991391246817818131
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950496561810637254}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000002, y: 1, z: 1.0000002}
+  m_Center: {x: 0, y: 1, z: 0}
