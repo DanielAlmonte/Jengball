@@ -152,7 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e291e8497ddeee44688ec4ff52276f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoClips: []
 --- !u!4 &457413916
 Transform:
   m_ObjectHideFlags: 0
@@ -299,7 +298,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916874813}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: b4505cbb840ab034197f96ddf6aaf115, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 07f5d1f6cccf40a4399bbb148cb74171, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -424,9 +423,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e291e8497ddeee44688ec4ff52276f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoClips:
-  - {fileID: 32900000, guid: 44085861ade33494090700b80b9810f4, type: 3}
-  - {fileID: 32900000, guid: b4531dcad3eb2e3428824849f9ee0e0d, type: 3}
 --- !u!1 &1298529646
 GameObject:
   m_ObjectHideFlags: 0

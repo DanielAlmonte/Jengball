@@ -37,14 +37,14 @@ public class Paused : MonoBehaviour
 
         if (paused == true)
         {
-            if (videoPlayer.frame == 155 && resume == false)
+            if (videoPlayer.frame == 1000 && resume == false)
             {
                 videoPlayer.Pause();
                 keyEnabled = true;
                 resume = true;
             }
 
-            if (videoPlayer.frame >= 215 && resume == true)
+            if (videoPlayer.frame >= 1325 && resume == true)
             {
                 Debug.Log("Stop");
                 keyEnabled = true;

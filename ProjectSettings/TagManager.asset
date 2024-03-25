@@ -13,8 +13,11 @@ TagManager:
   - Play
   - Options
   - Quit
-  - Min
-  - Plus
+  - RowsMin
+  - RowsPlus
+  - VolumeMin
+  - VolumePlus
+  - GoBack
   layers:
   - Default
   - TransparentFX
