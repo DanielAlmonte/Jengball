@@ -1,32 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Piece : MonoBehaviour
 {
-    //test constraints
-    Rigidbody rb;
-
-
-    // Boolean for if peace is selected
     public bool selected = false;
 
-    public bool pieceInside = true;
-    public int collisionCount = 1;
+    public int collisionCount = 0;
+
+    public bool isColliding
+    {
+        get { return collisionCount >= 1; }
+    }
 
     Material pieceMaterial;
+    Color selectedColor;
     [SerializeField] Material bloomMaterial;
     [SerializeField] Material noBloomMaterial;
-    Color selectedColor;
+
+    float rotate = 0;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         pieceMaterial = GetComponent<MeshRenderer>().material;
         selectedColor = new Color(0f, 125.0f/255.0f, 42.0f/255.0f);
-
-        rb = GetComponent<Rigidbody>();
-
     }
 
     // Update is called once per frame
@@ -36,28 +36,40 @@ public class Piece : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //Remove all constraints have to do dont forget!
-            rb.constraints = RigidbodyConstraints.None;
+            selected = false;
         }
     }
 
-    void MovePiece()
+        void MovePiece()
     {
         if (selected)
         {
+            GetComponent<Rigidbody>().isKinematic = true;
+
             // Change the material to a material that has emission
             pieceMaterial = bloomMaterial;
             GetComponent<MeshRenderer>().material = bloomMaterial;
 
-            if (Input.GetKey(KeyCode.W))
+            // if the piece is not inside you can move up!
+            if (isColliding)
             {
-                gameObject.transform.localPosition += transform.TransformDirection(new Vector3(0, 10, 0) * Time.deltaTime);
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                gameObject.transform.localPosition += transform.TransformDirection(new Vector3(0, -5, 0) * Time.deltaTime);
-            }
+                if (Input.GetKey(KeyCode.W))
+                {
+                    gameObject.transform.localPosition += transform.TransformDirection(new Vector3(0, 10, 0) * Time.deltaTime);
+                }
+                if (Input.GetKey(KeyCode.S))
+                {
+                    gameObject.transform.localPosition += transform.TransformDirection(new Vector3(0, -5, 0) * Time.deltaTime);
+                }
 
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    rotate += 90f;
+                    gameObject.transform.localRotation = Quaternion.Euler(0.0f, rotate, 0.0f);
+                }
+
+            }
+       
             if (Input.GetKey(KeyCode.A))
             {
                 gameObject.transform.localPosition += transform.TransformDirection(new Vector3(5, 0, 0) * Time.deltaTime);
@@ -77,21 +89,22 @@ public class Piece : MonoBehaviour
 
             // if peace is not selected it can fall again.
             GetComponent<Rigidbody>().isKinematic = false;
+
         }
     }
 
-
-
-    void OnCollisionEnter(Collision other)
+    void OnCollisionEnter(Collision col)
     {
-        if (other.gameObject.tag == "Ground")
+        collisionCount++;
+        if (col.gameObject.tag == "Ground")
         {
-            Destroy(this.gameObject, 0.5f);
+            Destroy(this.gameObject);
+            Debug.Log("Hendrik loss");
         }
+    }
 
-        else
-        {
-            return;
-        }
+    void OnCollisionExit(Collision col)
+    {
+        collisionCount--;
     }
 }
