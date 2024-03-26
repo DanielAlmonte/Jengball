@@ -43,6 +43,8 @@ public class RoundManager : MonoBehaviour
             // Debug.Log("player 1 turn");
             player1Turn = !player1Turn;
             player2Turn = !player2Turn;
+
+            return;
         }
 
         if (player1Turn)
