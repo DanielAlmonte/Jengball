@@ -2351,7 +2351,7 @@ MonoBehaviour:
   JengaTower: {fileID: 0}
   JengaPiece: {fileID: 8960784157532216944, guid: d95c191ea290a884a8ea425a7dcf7e28,
     type: 3}
-  JengaRotatedPiece: {fileID: 4304120870928424919, guid: 676e77fc3b0e30649804be7f5e5abe8d,
+  JengaRotatedPiece: {fileID: 8960784157532216944, guid: d95c191ea290a884a8ea425a7dcf7e28,
     type: 3}
   JengaTowerWidth: 3
   JengaTowerHeight: 18
