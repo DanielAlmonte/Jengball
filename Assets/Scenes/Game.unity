@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18154848, g: 0.22718929, b: 0.30740675, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -407,7 +407,6 @@ MonoBehaviour:
     type: 3}
   JengaTowerWidth: 3
   JengaTowerHeight: 18
-  Materials: []
   JengaPiecesList: []
 --- !u!64 &121262467
 MeshCollider:
@@ -544,7 +543,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.12186928, y: -0, z: -0, w: 0.9925462}
   m_LocalPosition: {x: 1.1796163, y: -0.12157315, z: 7.259369}
-  m_LocalScale: {x: 3.1, y: 0.5, z: 3.5000002}
+  m_LocalScale: {x: 3.1, y: 0.5, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1998118118}
@@ -1808,7 +1807,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.12186928, w: 0.9925462}
   m_LocalPosition: {x: 4.5156164, y: -0.12157315, z: 3.959369}
-  m_LocalScale: {x: 3.5000002, y: 0.5, z: 3.1}
+  m_LocalScale: {x: 3, y: 0.5, z: 3.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1998118118}
@@ -2262,7 +2261,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.12186928, y: -0, z: -0, w: 0.9925462}
   m_LocalPosition: {x: 1.1796163, y: -0.12157315, z: 0.629369}
-  m_LocalScale: {x: 3.1, y: 0.5, z: 3.5000002}
+  m_LocalScale: {x: 3.1, y: 0.5, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1998118118}
@@ -2315,7 +2314,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.12186928, w: 0.9925462}
   m_LocalPosition: {x: -2.1203837, y: -0.17157315, z: 3.959369}
-  m_LocalScale: {x: 3.5000002, y: 0.5, z: 3.1}
+  m_LocalScale: {x: 3, y: 0.5, z: 3.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1998118118}
@@ -2349,11 +2348,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1841eee612f9a4443a0d1c12ced502ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JengaPiece: {fileID: 8960784157532216944, guid: d95c191ea290a884a8ea425a7dcf7e28,
+  JengaPiece: {fileID: 1949830053396679270, guid: d95c191ea290a884a8ea425a7dcf7e28,
     type: 3}
   JengaTowerWidth: 3
   JengaTowerHeight: 18
-  Materials: []
   JengaPiecesList: []
 --- !u!4 &1474719542
 Transform:

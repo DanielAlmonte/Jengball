@@ -33,7 +33,7 @@ public class RoundManager : MonoBehaviour
         CheckWhosTurn();
     }
 
-       void CheckWhosTurn()
+    void CheckWhosTurn()
     {
         if(cameraController.selectedPiece == null) return;        
         if(!cameraController.selectedPiece.isColliding) return; 
@@ -41,16 +41,25 @@ public class RoundManager : MonoBehaviour
         // player 1 aan de ganng
         if(cameraController.selectedPiece.selected)
         {
-            Debug.Log("player 1 turn");
-            player1Turn = true;
-            player2Turn = false;
+            // Debug.Log("player 1 turn");
+            player1Turn = !player1Turn;
+            player2Turn = !player2Turn;
         }
-        else
+
+        if (player1Turn)
+        {
+            Debug.Log("player 1 turn");
+        }
+        else if (player2Turn)
         {
             Debug.Log("player 2 turn");
-            player1Turn = false;
-            player2Turn = true;
-        }        
+        }
+        // else
+        // {
+        //     Debug.Log("player 2 turn");
+        //     player1Turn = false;
+        //     player2Turn = true;
+        // }        
         ChangePlayerIcon();
     }
 
