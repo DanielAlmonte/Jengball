@@ -11,7 +11,7 @@ public class Piece : MonoBehaviour
 
     public bool isColliding
     {
-        get { return collisionCount >= 1; }
+        get { return collisionCount <= 1; }
     }
 
     Material pieceMaterial;
@@ -50,7 +50,7 @@ public class Piece : MonoBehaviour
             pieceMaterial = bloomMaterial;
             GetComponent<MeshRenderer>().material = bloomMaterial;
 
-            // if the piece is not inside you can move up!
+            // if the piece is not inside you cant move up!
             if (isColliding)
             {
                 if (Input.GetKey(KeyCode.W))

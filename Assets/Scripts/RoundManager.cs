@@ -36,9 +36,8 @@ public class RoundManager : MonoBehaviour
        void CheckWhosTurn()
     {
         if(cameraController.selectedPiece == null) return;        
-        Debug.Log("piece is not null");
+        if(!cameraController.selectedPiece.isColliding) return; 
 
-        if (!cameraController.selectedPiece.isColliding) return;  
         // player 1 aan de ganng
         if(cameraController.selectedPiece.selected)
         {
@@ -62,7 +61,7 @@ public class RoundManager : MonoBehaviour
             player1Icon.color = Color.red;
             player2Icon.color = Color.white;
         }
-        else
+        if(player2Turn)
         {
             player2Icon.color = Color.green;
             player1Icon.color = Color.white;
