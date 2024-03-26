@@ -18,7 +18,11 @@ public class Piece : MonoBehaviour
 
     Material pieceMaterial;
     Color selectedColor;
-    [SerializeField] Material bloomMaterial, noBloomMaterial;
+    [SerializeField] Material bloomMaterial;
+    [SerializeField] Material noBloomMaterial;
+
+    float rotate = 0;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -108,5 +112,6 @@ public class Piece : MonoBehaviour
     {
         collisionCount--;
     }
-    //commit to have same script
 }
+
+// commit to have same script.
