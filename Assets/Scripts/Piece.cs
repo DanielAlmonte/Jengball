@@ -112,4 +112,5 @@ public class Piece : MonoBehaviour
     {
         collisionCount--;
     }
+    //commit to have same script
 }
