@@ -52,7 +52,7 @@ Material:
     - _Cull: 2
     - _DstBlend: 10
     - _Fuzziness: 0
-    - _HueRange: 0.8
+    - _HueRange: 0.825
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SrcBlend: 5

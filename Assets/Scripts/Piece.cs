@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Piece : MonoBehaviour
 {
+    // The outerBox is used to show the player which piece is selected.
+    public GameObject outerBox;
     public bool selected = false;
 
     public int collisionCount = 0;
@@ -44,13 +46,16 @@ public class Piece : MonoBehaviour
     {
         if (selected)
         {
+            //Enables the outerBox/outline
+            outerBox.SetActive(true);
+
             GetComponent<Rigidbody>().isKinematic = true;
 
             // Change the material to a material that has emission
             pieceMaterial = bloomMaterial;
             GetComponent<MeshRenderer>().material = bloomMaterial;
 
-            // if the piece is not inside you cant move up!
+            // If the piece is not inside you can move it up!
             if (isColliding)
             {
                 if (Input.GetKey(KeyCode.W))
@@ -70,7 +75,7 @@ public class Piece : MonoBehaviour
 
             }
        
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KWWWWeyCode.A))
             {
                 gameObject.transform.localPosition += transform.TransformDirection(new Vector3(5, 0, 0) * Time.deltaTime);
             }
@@ -83,13 +88,14 @@ public class Piece : MonoBehaviour
         
         if (!selected)
         {
+            //Disables the outerBox/outline
+            outerBox.SetActive(false);
             // Change the material with a material without emission.
             pieceMaterial = noBloomMaterial;
             GetComponent<MeshRenderer>().material = noBloomMaterial;
 
-            // if peace is not selected it can fall again.
+            // If peace is not selected it can fall again.
             GetComponent<Rigidbody>().isKinematic = false;
-
         }
     }
 

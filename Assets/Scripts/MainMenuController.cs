@@ -23,7 +23,8 @@ public class MainMenuController : MonoBehaviour
         Intro();
         if (moveUp == true)
         {
-             this.transform.position = Vector3.MoveTowards(this.transform.position, targetPosition, speed * Time.deltaTime);
+            // this.transform.rotation = Quaternion.Euler(0, 225, 0);
+            this.transform.position = Vector3.MoveTowards(this.transform.position, targetPosition, speed * Time.deltaTime);
         }
     }
 
