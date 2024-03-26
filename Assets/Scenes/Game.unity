@@ -235,11 +235,11 @@ Transform:
   m_GameObject: {fileID: 4369505}
   serializedVersion: 2
   m_LocalRotation: {x: 0.6532815, y: 0.27059805, z: 0.27059805, w: 0.6532815}
-  m_LocalPosition: {x: -13.48, y: 20, z: 1}
+  m_LocalPosition: {x: -13.48, y: 17, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 775474503}
   m_LocalEulerAnglesHint: {x: 45, y: 90, z: 90}
 --- !u!4 &87572415 stripped
 Transform:
@@ -364,12 +364,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112393391}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 1, y: 20, z: -13.41}
+  m_LocalRotation: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
+  m_LocalPosition: {x: 1, y: 17, z: -13.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 775474503}
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!1 &121262465
 GameObject:
@@ -403,16 +403,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1841eee612f9a4443a0d1c12ced502ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JengaTower: {fileID: 0}
   JengaPiece: {fileID: 2117700534756950370, guid: a54f33ea755d3e842bb0ce211809e93e,
-    type: 3}
-  JengaRotatedPiece: {fileID: 950496561810637254, guid: 73d78ae0d6ea7184d8574c31d9804602,
     type: 3}
   JengaTowerWidth: 3
   JengaTowerHeight: 18
   Materials: []
   JengaPiecesList: []
-  JengaRotatedPiecesArr: []
 --- !u!64 &121262467
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -768,11 +764,11 @@ Transform:
   m_GameObject: {fileID: 293891906}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 775474503}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &293933145
 GameObject:
@@ -1364,6 +1360,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1165373525}
+  - {fileID: 293891909}
+  - {fileID: 4369508}
+  - {fileID: 1214274126}
+  - {fileID: 1666947866}
+  - {fileID: 112393394}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &801144477 stripped
@@ -2095,11 +2096,11 @@ Transform:
   m_GameObject: {fileID: 1214274123}
   serializedVersion: 2
   m_LocalRotation: {x: 0.6532815, y: -0.27059805, z: -0.27059805, w: 0.6532815}
-  m_LocalPosition: {x: 13.36, y: 20, z: 1}
+  m_LocalPosition: {x: 13.36, y: 17, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 775474503}
   m_LocalEulerAnglesHint: {x: 45, y: -90, z: -90}
 --- !u!4 &1255303601 stripped
 Transform:
@@ -2348,16 +2349,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1841eee612f9a4443a0d1c12ced502ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JengaTower: {fileID: 0}
   JengaPiece: {fileID: 8960784157532216944, guid: d95c191ea290a884a8ea425a7dcf7e28,
-    type: 3}
-  JengaRotatedPiece: {fileID: 8960784157532216944, guid: d95c191ea290a884a8ea425a7dcf7e28,
     type: 3}
   JengaTowerWidth: 3
   JengaTowerHeight: 18
   Materials: []
   JengaPiecesList: []
-  JengaRotatedPiecesArr: []
 --- !u!4 &1474719542
 Transform:
   m_ObjectHideFlags: 0
@@ -2484,12 +2481,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666947863}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.92387956, y: 0, z: 0, w: 0.38268343}
-  m_LocalPosition: {x: 1, y: 20, z: 13.17}
+  m_LocalRotation: {x: 0.92387956, y: -0, z: -0, w: 0.38268343}
+  m_LocalPosition: {x: 1, y: 17, z: 13.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 775474503}
   m_LocalEulerAnglesHint: {x: 135, y: 0, z: 0}
 --- !u!1 &1681946824
 GameObject:
@@ -3695,8 +3692,3 @@ SceneRoots:
   - {fileID: 1998118118}
   - {fileID: 1681946825}
   - {fileID: 775474503}
-  - {fileID: 293891909}
-  - {fileID: 4369508}
-  - {fileID: 1214274126}
-  - {fileID: 1666947866}
-  - {fileID: 112393394}
