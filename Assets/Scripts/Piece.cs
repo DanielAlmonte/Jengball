@@ -56,33 +56,32 @@ public class Piece : MonoBehaviour
             GetComponent<MeshRenderer>().material = bloomMaterial;
 
             // If the piece is not inside you can move it up!
-            if (isColliding)
-            {
+            // if (isColliding)
+            // {
                 if (Input.GetKey(KeyCode.W))
                 {
-                    gameObject.transform.localPosition += transform.TransformDirection(new Vector3(0, 10, 0) * Time.deltaTime);
+                    this.gameObject.transform.localPosition += new Vector3(0, 10, 0) * Time.deltaTime;
                 }
                 if (Input.GetKey(KeyCode.S))
                 {
-                    gameObject.transform.localPosition += transform.TransformDirection(new Vector3(0, -5, 0) * Time.deltaTime);
+                    gameObject.transform.localPosition += new Vector3(0, -5, 0) * Time.deltaTime;
                 }
 
                 if (Input.GetKeyDown(KeyCode.R))
                 {
                     rotate += 90f;
-                    gameObject.transform.localRotation = Quaternion.Euler(0.0f, rotate, 0.0f);
-                }
-
-            }
+                    this.gameObject.transform.localRotation = Quaternion.Euler(90, rotate, 0.0f);
+                // }
+            }   
        
-            if (Input.GetKey(KWWWWeyCode.A))
+            if (Input.GetKey(KeyCode.A))
             {
-                gameObject.transform.localPosition += transform.TransformDirection(new Vector3(5, 0, 0) * Time.deltaTime);
+                this.gameObject.transform.localPosition += new Vector3(0, 0, 5) * Time.deltaTime;
             }
 
             if (Input.GetKey(KeyCode.D))
             {
-                gameObject.transform.localPosition += transform.TransformDirection(new Vector3(-5, 0, 0) * Time.deltaTime);
+                this.gameObject.transform.localPosition += new Vector3(0, 0, -5) * Time.deltaTime;
             }
         }
         
@@ -105,7 +104,6 @@ public class Piece : MonoBehaviour
         if (col.gameObject.tag == "Ground")
         {
             Destroy(this.gameObject);
-            Debug.Log("Hendrik loss");
         }
     }
 
