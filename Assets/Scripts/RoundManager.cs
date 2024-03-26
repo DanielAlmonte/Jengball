@@ -9,9 +9,8 @@ using UnityEngine.UI;
 
 public class RoundManager : MonoBehaviour
 {
-    public bool player1Turn = true;
-    public bool player2Turn = false;
-
+    public bool player1Turn = true, player2Turn = false;
+    
     [SerializeField] private Image player1Icon;
     [SerializeField] private Image player2Icon;
 

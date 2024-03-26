@@ -18,11 +18,7 @@ public class Piece : MonoBehaviour
 
     Material pieceMaterial;
     Color selectedColor;
-    [SerializeField] Material bloomMaterial;
-    [SerializeField] Material noBloomMaterial;
-
-    float rotate = 0;
-    
+    [SerializeField] Material bloomMaterial, noBloomMaterial;
 
     // Start is called before the first frame update
     void Start()
