@@ -13,7 +13,7 @@ public class Piece : MonoBehaviour
 
     public bool isColliding
     {
-        get { return collisionCount >= 1; }
+        get { return collisionCount <= 1; }
     }
 
     Material pieceMaterial;
@@ -75,7 +75,7 @@ public class Piece : MonoBehaviour
 
             }
        
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KWWWWeyCode.A))
             {
                 gameObject.transform.localPosition += transform.TransformDirection(new Vector3(5, 0, 0) * Time.deltaTime);
             }
