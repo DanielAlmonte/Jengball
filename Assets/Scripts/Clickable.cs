@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Clickable : MonoBehaviour
 {
+    // public string testFunction;
     public GameObject menu;
     public List<GameObject> NumberOfRows = new List<GameObject>();
     public List<GameObject> VolumeNumbers = new List<GameObject>();
@@ -49,6 +50,7 @@ public class Clickable : MonoBehaviour
 
             else if (this.gameObject.tag == "Quit")
             {
+                // Invoke(testFunction, 0);
                 this.gameObject.GetComponent<Animation>().Play("Button");
                 Debug.Log("quited"); 
                 Application.Quit(); Debug.Log("quited");
@@ -106,4 +108,9 @@ public class Clickable : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    // void Test()
+    // {
+    //     Debug.Log("Invoke works");
+    // }
 }
