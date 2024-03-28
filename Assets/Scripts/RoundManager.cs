@@ -24,8 +24,20 @@ public class RoundManager : MonoBehaviour
     }
 
     void Update()
+    {   
+        
+    }
+
+    void ChangePlayerIcon()
     {
-        if(cameraController.selectedPiece == null) return;
+        playerIcon.enabled = !playerIcon.enabled;
+
+        cameraController.selectedPiece.selected = false;
+    }
+
+    void PlayerSwitch()
+    {
+             if(cameraController.selectedPiece == null) return;
         if(!cameraController.selectedPiece.isNotColliding)
         {
             if (!functionCalled)
@@ -47,13 +59,9 @@ public class RoundManager : MonoBehaviour
             }
         }
         
-        
-    }
 
-    void ChangePlayerIcon()
-    {
-        playerIcon.enabled = !playerIcon.enabled;
-    }
+    } 
+
 
 
  
