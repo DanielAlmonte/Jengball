@@ -11,9 +11,9 @@ public class Piece : MonoBehaviour
 
     public int collisionCount = 0;
 
-    public bool isColliding
+    public bool isNotColliding
     {
-        get { return collisionCount <= 1; }
+        get { return collisionCount <= 0; }
     }
 
     Material pieceMaterial;
@@ -50,7 +50,7 @@ public class Piece : MonoBehaviour
 
 
             // If the piece is not inside you can move it up!
-            if (isColliding)
+            if (isNotColliding)
             {
                 if (Input.GetKey(KeyCode.W))
                 {
