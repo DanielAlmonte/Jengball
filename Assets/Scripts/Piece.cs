@@ -18,7 +18,6 @@ public class Piece : MonoBehaviour
 
     Material pieceMaterial;
     Color selectedColor;
-    [SerializeField] Material bloomMaterial, noBloomMaterial;
 
     float rotate = 0;
 
@@ -49,9 +48,6 @@ public class Piece : MonoBehaviour
 
             GetComponent<Rigidbody>().isKinematic = true;
 
-            // Change the material to a material that has emission
-            pieceMaterial = bloomMaterial;
-            GetComponent<MeshRenderer>().material = bloomMaterial;
 
             // If the piece is not inside you can move it up!
             if (isColliding)
@@ -88,9 +84,6 @@ public class Piece : MonoBehaviour
         {
             //Disables the outerBox/outline
             outerBox.SetActive(false);
-            // Change the material with a material without emission.
-            pieceMaterial = noBloomMaterial;
-            GetComponent<MeshRenderer>().material = noBloomMaterial;
 
             // If peace is not selected it can fall again.
             GetComponent<Rigidbody>().isKinematic = false;
