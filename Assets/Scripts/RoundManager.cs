@@ -7,6 +7,10 @@ using UnityEngine.UI;
 // trying somehthing hereeeeeeeee
 // need to this at home
 
+
+
+// adding something betweeen the rounds
+
 public class RoundManager : MonoBehaviour
 {
     public bool player1Turn = true, player2Turn = false;
